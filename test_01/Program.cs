@@ -1,9 +1,9 @@
-﻿string[] stringArray = new string[] { "hellow", "2", "world", "123" , "1234", "21"};
-Console.WriteLine("Исходный массив");
+﻿string[] stringArray = new string[] { "hellow", "2", "world", "123", "1234", "21" };
+Console.WriteLine("Исходный массив:");
 
 PrintArray(stringArray);
 string[] res = ResizeArray(stringArray);
-Console.WriteLine("Результирующий массив");
+Console.WriteLine("Результирующий массив:");
 PrintArray(res);
 
 string[] ResizeArray(string[] array) //  новый массив с эл-ми до 3 символов ------------------------
@@ -31,9 +31,16 @@ string[] ResizeArray(string[] array) //  новый массив с эл-ми д
 
 void PrintArray(string[] array) //  вывод массива на консоль ----------------------------
 {
-    for (int i = 0; i < array.Length; i++)
+    int len = array.Length;
+    if (len == 0) Console.WriteLine("в массиве нет элементов");
+    else
     {
-        Console.WriteLine(array[i]);
+        Console.Write("[ ");
+        for (int i = 0; i < len - 1; i++)
+        {
+            Console.Write($"{array[i]} ");
+        }
+        Console.WriteLine($"{array[len - 1]} ]");
     }
 
 }
